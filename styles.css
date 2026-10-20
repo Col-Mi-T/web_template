@@ -5,9 +5,9 @@
     --bg-dark: #1a1a1a;
     --bg-surface: #ffffff;
 
-    /* Accent Branding (orange) */
-    --accent-orange: #ff9500;
-    --accent-orange-hover: #ffd29a;
+    /* Accent Branding (blue) */
+    --accent-blue: rgb(0, 204, 255);
+    --accent-blue-hover: rgb(0, 47, 59);
 
     /* Typography Colors */
     --text-dark: #333333;
@@ -19,15 +19,10 @@
     --border-light: #ffffff;
     --button-disabled: #cccccc;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, var(--bg-dark) 0%, #3a3a3a 100%);
-
     /* Shadows */
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 8px 15px rgba(0, 0, 0, 0.2);
-    --shadow-orange: 0 5px 15px rgba(255, 215, 0, 0.3);
-    --shadow-focus: 0 0 5px rgba(255, 215, 0, 0.3);
 }
 
 * {
@@ -53,7 +48,7 @@ a {
 }
 
 a:hover {
-    color: var(--accent-orange)
+    color: var(--accent-blue)
 }
 
 
@@ -86,6 +81,10 @@ a:hover {
     align-items: flex-start;
     align-content: flex-start;
     flex-wrap: wrap;
+}
+
+#menu li {
+    padding: 10px 10px;
 }
 
 #main {
@@ -142,19 +141,27 @@ a:hover {
     color: var(--text-white);
 }
 
-.contact-headline{
-    font-size: 2rem;
-        font-weight: 700;
-        line-height: 1.2;
-        margin-bottom: 24px;
-        color: var(--text-muted);
+.about-paragraph {
+    font-size: 1.2rem;
+    color: var(--text-white);
+    line-height: 1.7;
+    margin-bottom: 40px;
+    text-align: left;
 }
 
-.contact-paragraph{
+.contact-headline {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    color: var(--text-muted);
+}
+
+.contact-paragraph {
     font-size: 1.2rem;
-        color: var(--text-muted);
-        line-height: 1.7;
-        margin-bottom: 40px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 40px;
 }
 
 
@@ -179,12 +186,13 @@ a:hover {
 }
 
 .card {
-    background: var(--accent-orange);
+    background: var(--accent-blue);
     padding: 2rem;
-    border-radius: 8px;
+    border-radius: 4rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: all 0.3s ease;
+    border-bottom : 6px solid var(--bg-dark);
 }
 
 .card-title {
@@ -225,31 +233,21 @@ a:hover {
     transition: all 0.25s ease;
 }
 
-.repo-btn {
-    color: var(--text-white);
-    background: var(--bg-dark);
-}
-
-.repo-btn:hover {
-    color: var(--text-dark);
-    background: var(--accent-orange-hover);
-}
-
-.demo-btn {
+.read-btn {
     color: var(--text-dark);
 }
 
-.demo-btn:hover {
-    background: var(--accent-orange-hover)
+.read-btn:hover {
+    background: var(--accent-blue-hover)
 }
 
 .btn-primary {
-    background-color: var(--accent-orange);
+    background-color: var(--accent-blue);
     color: var(--bg-dark);
 }
 
 .btn-primary:hover {
-    background-color: var(--accent-orange-hover);
+    background-color: var(--accent-blue-hover);
     transform: translateY(-2px);
 }
 
@@ -315,7 +313,7 @@ a:hover {
     line-height: 1.6;
 }
 
-@media (min-width:768px){
+@media (min-width:768px) {
     #footer {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -373,7 +371,7 @@ a:hover {
         left: 0;
     }
 
-    
+
     #footer {
         display: block;
         padding: 32px 24px 20px;
@@ -394,4 +392,3 @@ a:hover {
         text-align: left;
     }
 }
-
