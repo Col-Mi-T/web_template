@@ -39,7 +39,8 @@ body {
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior:smooth;
+    scroll-padding-top: 90px;
 }
 
 a {
@@ -103,7 +104,13 @@ a:hover {
 }
 
 #menu li {
-    padding: 10px 10px;
+    padding: 0px 10px;
+    border-left: 2px solid var(--bg-primary);
+    border-radius:10px
+}
+
+#menu a{
+    font-size: 20px !important;
 }
 
 #main {
@@ -378,19 +385,30 @@ a:hover {
     #menu ul {
         border-top: 1px solid var(--bg-primary);
         position: absolute;
-        padding: 20px 2px;
+        padding: 20px 50px;
         display: block;
         top: 100%;
         left: -100%;
         width: 100%;
         background-color: var(--bg-dark);
         transition: left 0.3s ease;
+        text-align: center;
     }
 
     #menu ul.active {
         left: 0;
     }
 
+    #menu li {
+        text-align: center;
+        
+    }
+    #menu li {
+        padding: 10px 0px;
+        border-left:0px;
+        border-bottom: 2px solid var(--bg-primary);
+        border-radius:10px
+    }
 
     #footer {
         display: block;
