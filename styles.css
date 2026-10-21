@@ -245,6 +245,91 @@ textarea{
     flex-wrap: wrap;
 }
 
+.lists{
+    display:flex;
+    flex-direction:row;
+    gap:20px;
+    text-align:left;
+}
+
+.list-item{
+    margin-left:auto;
+    border: 2px solid;
+    width:75%;
+    padding:2ch 10px;
+    border-radius:10px;
+    background:var(--accent-blue)
+}
+
+.left{
+    width:20%;
+}
+
+.left ul{
+    display: flex;
+    flex-direction:column;
+    gap: 5px;
+}
+
+.left li{
+    list-style: none;
+}
+
+.list-item-tab{
+    padding:10px;
+    font-weight:900;
+    text-align:center;
+    background: var(--accent-blue);
+    border-radius:10px;
+    border: 2px dashed var(--accent-blue);
+    color: var(--text-dark);
+}
+
+.list-item-tab:hover{
+    background: var(--accent-blue-hover);
+    color:var(--accent-blue)
+}
+
+.list-item-tab.active {
+    background: var(--accent-blue-hover);
+    color: var(--accent-blue)
+}
+.list-item-title{
+    text-align:right;
+    padding:15px;
+}
+
+.list-item-par{
+    padding: 8px;
+}
+
+.image {
+    width: 100%;
+    border-radius: 4rem;
+}
+
+.links {
+    border-top: 1px solid var(--border-light);
+    padding-top: 20px;
+    text-align: right;
+}
+
+.links a {
+    padding: 15px;
+    border: 3px solid var(--bg-dark);
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.read-btn {
+    color: var(--text-dark);
+}
+
+.read-btn:hover {
+    background: var(--accent-blue-hover)
+}
+
+/*
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -271,25 +356,7 @@ textarea{
     width: 100%;
     border-radius: 4rem;
 }
-
-.lang-image {
-    width: 50%;
-    border-radius: 100px;
-    border: 5px dashed var(--bg-dark)
-}
-
-.links {
-    border-top: 1px solid var(--border-light);
-    padding-top: 20px;
-    text-align: right;
-}
-
-.links a {
-    padding: 15px;
-    border: 3px solid var(--bg-dark);
-    border-radius: 10px;
-    text-decoration: none;
-}
+*/
 
 .btn {
     padding: 12px 28px;
@@ -300,13 +367,6 @@ textarea{
     transition: all 0.25s ease;
 }
 
-.read-btn {
-    color: var(--text-dark);
-}
-
-.read-btn:hover {
-    background: var(--accent-blue-hover)
-}
 
 .btn-primary {
     background-color: var(--accent-blue);
