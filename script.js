@@ -23,3 +23,57 @@ function closeMenu(){
     }
 }
 
+// SERVICES HANDLER
+
+const services = [
+    {
+        title:"SERVICE1",
+        image:{
+            url: "images/ screenshot.png",
+            alt: "Service Image"
+        },
+        paragraph:"Stuff",
+        read:"#"
+    },
+    {
+        title: "SERVICE2",
+        image: {
+            url: "images/ screenshot.png",
+            alt: "Service Image"
+        },
+        paragraph: "Stuff",
+        read: "#"
+    },
+    {
+        title: "SERVICE3",
+        image: {
+            url: "images/ screenshot.png",
+            alt: "Service Image"
+        },
+        paragraph: "Stuff",
+        read: "#"
+    }
+]
+
+const leftTabs = document.querySelectorAll(".list-item-tab")
+console.log(leftTabs)
+let tabId = ""
+const listItem = document.querySelector(".list-item")
+const listTitle = document.querySelector(".list-item-title")
+const listImage = document.querySelector(".image")
+const readBtn = document.querySelector(".read-btn")
+
+
+leftTabs.forEach(tab=>{
+    console.log(tab)
+    tab.addEventListener('click',()=>{
+        leftTabs.forEach(otherTabs => {
+            otherTabs.classList.remove('active')
+        })
+        tab.classList.add("active")
+        tabId = tab.id
+        let service = services[tabId-1]
+        //console.log(service)
+        
+    })
+})
