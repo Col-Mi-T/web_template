@@ -190,6 +190,46 @@ a:hover {
     margin-bottom: 40px;
 }
 
+form{
+    background:rgba(0, 204, 255, 0.35);
+    border: 2px solid var(--accent-blue);
+    padding: 20px 10px;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    gap:10px;
+    border-radius:70px;
+}
+
+label{
+    align-items: left;
+    text-align:left
+}
+
+input, textarea{
+    padding:10px;
+    width:50%;
+    align-items: center;
+    border-radius:20px;
+    border:2px solid var(--accent-blue)
+}
+
+input::after{
+    border: 2px solid var(--accent-blue)  
+}
+
+button{
+    padding:10px 10px;
+    font-weight:800;
+    font-size:16px;
+}
+
+textarea{
+    min-width:50%;
+    min-height:50px;
+    max-width:60%;
+    max-height: 200px;
+}
 
 .hero-bio {
     font-size: 1.2rem;
