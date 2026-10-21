@@ -29,28 +29,40 @@ const services = [
     {
         title:"SERVICE1",
         image:{
-            url: "images/ screenshot.png",
-            alt: "Service Image"
+            url: "images/screenshot.png",
+            alt: "Service Image 1"
         },
-        paragraph:"Stuff",
+        paragraph:[
+            "This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.",
+            "This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.",
+            "This is xyz bla bla bla stuff being spoken about."
+        ],
         read:"#"
     },
     {
         title: "SERVICE2",
         image: {
-            url: "images/ screenshot.png",
-            alt: "Service Image"
+            url: "images/image.png",
+            alt: "Service Image 2"
         },
-        paragraph: "Stuff",
+        paragraph: [
+            "This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.",
+            "This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.",
+            "This is xyz bla bla bla stuff being spoken about."
+        ],
         read: "#"
     },
     {
         title: "SERVICE3",
         image: {
-            url: "images/ screenshot.png",
-            alt: "Service Image"
+            url: "images/image1.png",
+            alt: "Service Image 3"
         },
-        paragraph: "Stuff",
+        paragraph: [
+            "This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.",
+            "This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.",
+            "This is xyz bla bla bla stuff being spoken about."
+        ],
         read: "#"
     }
 ]
@@ -59,10 +71,6 @@ const leftTabs = document.querySelectorAll(".list-item-tab")
 console.log(leftTabs)
 let tabId = ""
 const listItem = document.querySelector(".list-item")
-const listTitle = document.querySelector(".list-item-title")
-const listImage = document.querySelector(".image")
-const readBtn = document.querySelector(".read-btn")
-
 
 leftTabs.forEach(tab=>{
     console.log(tab)
@@ -73,7 +81,26 @@ leftTabs.forEach(tab=>{
         tab.classList.add("active")
         tabId = tab.id
         let service = services[tabId-1]
-        //console.log(service)
-        
+
+        let title = service.title
+        let imageUrl = service.image.url
+        let imageAlt = service.image.alt
+        let par = service.paragraph
+        let readLink = service.read
+
+        let paragraph = ''
+        par.forEach(p=>{
+            paragraph +=`<div class="list-item-par">${p}</div>`
+        })
+        listItem.innerHTML = `
+        <div class="list-item-title"><h2>${title}</h2></div>
+        <div id="service-image">
+            <img class="image" src="${imageUrl}" alt="${imageAlt}">
+        </div>
+        ${paragraph}
+        <div class="links">
+            <a class="btn read-btn" href="${readLink}">Read More</a>
+        </div>
+        `
     })
 })
