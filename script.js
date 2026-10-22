@@ -104,3 +104,11 @@ leftTabs.forEach(tab=>{
         `
     })
 })
+
+
+const exploreBtn = document.querySelector(".read-btn")
+const exploreSection = document.getElementById("explore-service")
+exploreBtn.addEventListener("click",()=>{
+    console.log(exploreBtn)
+    exploreSection.style.display = "flex"
+})

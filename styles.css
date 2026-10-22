@@ -308,25 +308,36 @@ textarea{
     border-radius: 4rem;
 }
 
-.links {
-    border-top: 1px solid var(--border-light);
-    padding: 20px;
-    text-align: right;
-}
-
-.links a {
-    padding: 15px;
-    border: 3px solid var(--bg-dark);
-    border-radius: 10px;
-    text-decoration: none;
+#explore-service {
+    position: fixed;
+    z-index: 9999;
+    top: 40px;
+    left: 50%;
+    height: 95%;
+    width: 95%;
+    transform: translateX(-50%);
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    padding: 8px;
+    background: rgba(252, 252, 252, 0.764);
+    backdrop-filter: blur(4px);
+    border: 1px solid var(--border);
+    border-radius: 50px;
 }
 
 .read-btn {
+    text-align: center;
+    margin-left:60%;
+    padding: 1px;
+    text-decoration: none;
     color: var(--text-dark);
+    border: 3px solid var(--bg-dark);
 }
 
 .read-btn:hover {
-    background: var(--accent-blue-hover)
+    background: var(--accent-blue-hover);
+    color: var(--accent-blue);
 }
 
 .btn {
