@@ -257,7 +257,7 @@ textarea{
     border: 2px solid;
     width:75%;
     padding:2px 10px;
-    border-radius:10px;
+    border-radius:5px;
     background:var(--accent-blue)
 }
 
@@ -277,11 +277,11 @@ textarea{
 
 .list-item-tab{
     padding:10px;
+    border: 2px solid;
     font-weight:900;
     text-align:center;
     background: var(--accent-blue);
-    border-radius:10px;
-    border: 2px dashed var(--accent-blue);
+    border-radius:5px;
     color: var(--text-dark);
 }
 
@@ -329,35 +329,6 @@ textarea{
     background: var(--accent-blue-hover)
 }
 
-/*
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.card {
-    background: var(--accent-blue);
-    padding: 2rem;
-    border-radius: 4rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: all 0.3s ease;
-    border-bottom : 6px solid var(--bg-dark);
-}
-
-.card-title {
-    text-align: left;
-    font-size: 2rem;
-    padding: 20px 5px
-}
-
-.image {
-    width: 100%;
-    border-radius: 4rem;
-}
-*/
-
 .btn {
     padding: 12px 28px;
     font-size: 0.95rem;
@@ -366,7 +337,6 @@ textarea{
     border-radius: 6px;
     transition: all 0.25s ease;
 }
-
 
 .btn-primary {
     background-color: var(--accent-blue);
@@ -522,6 +492,16 @@ textarea{
         overflow:auto;
     }
     
+    input, textarea{
+        width:100%;
+    }
+
+    textarea{
+        min-width:50%;
+        min-height:50px;
+        max-width:100%;
+        max-height: 200px;
+    }
 
     .left ul{
         display:flex;
@@ -530,12 +510,7 @@ textarea{
     }
 
     .list-item{
-        margin-left:auto;
-        border: 2px solid;
         width:100%;
-        padding:2px 10px;
-        border-radius:10px;
-        background:var(--accent-blue)
     }
 
     #footer {
