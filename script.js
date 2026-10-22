@@ -111,8 +111,12 @@ exploreBtn.addEventListener("click",()=>{
     exploreSection.innerHTML = `
     <div class="explore-header">
         <h2>HEADING</h2>
-        <p>×</p>
+        <p id="close-explore">×</p>
     </div>
     `
     exploreSection.style.display = "flex"
+    const closeExplore = document.getElementById("close-explore")
+    closeExplore.addEventListener("click",()=>{
+        exploreSection.style.display = "none"
+    })
 })

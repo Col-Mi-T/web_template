@@ -349,7 +349,7 @@ textarea {
     border-bottom: 2px solid var(--bg-primary);
 }
 
-.explore-header p {
+#close-explore {
     margin-left: auto;
     cursor:pointer;
     padding:0px 15px;
