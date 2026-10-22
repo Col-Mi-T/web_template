@@ -98,17 +98,21 @@ leftTabs.forEach(tab=>{
             <img class="image" src="${imageUrl}" alt="${imageAlt}">
         </div>
         ${paragraph}
-        <div class="links">
-            <a class="btn read-btn" href="${readLink}">Read More</a>
-        </div>
+        <div class="btn read-btn">Explore</div>
         `
     })
 })
 
 
 const exploreBtn = document.querySelector(".read-btn")
-const exploreSection = document.getElementById("explore-service")
+const exploreSection = document.querySelector(".explore")
 exploreBtn.addEventListener("click",()=>{
     console.log(exploreBtn)
+    exploreSection.innerHTML = `
+    <div class="explore-header">
+        <h2>HEADING</h2>
+        <p>×</p>
+    </div>
+    `
     exploreSection.style.display = "flex"
 })
