@@ -335,11 +335,12 @@ textarea {
 .explore-header {
     display: flex;
     padding: 0px 10px;
+    padding-bottom:20px;
     align-items: center;
     position: relative;
 }
 
-.explore-header h2 {
+.explore-header h1 {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -362,17 +363,28 @@ textarea {
     color:red
 }
 
-.read-btn {
+.explore-body{
+    overflow:auto
+}
+
+.explore-image{
+    width:70%
+}
+.explore-paragraph{
+
+}
+    
+#read-btn {
     cursor: pointer;
     text-align: center;
     margin-left: 60%;
-    padding: 1px;
+    padding: 10px;
     text-decoration: none;
     color: var(--text-dark);
     border: 3px solid var(--bg-dark);
 }
 
-.read-btn:hover {
+#read-btn:hover {
     background: var(--accent-blue-hover);
     color: var(--accent-blue);
 }

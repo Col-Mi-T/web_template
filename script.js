@@ -36,8 +36,7 @@ const services = [
             "This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.",
             "This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.",
             "This is xyz bla bla bla stuff being spoken about."
-        ],
-        read:"#"
+        ]
     },
     {
         title: "SERVICE2",
@@ -49,8 +48,7 @@ const services = [
             "This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.",
             "This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.",
             "This is xyz bla bla bla stuff being spoken about."
-        ],
-        read: "#"
+        ]
     },
     {
         title: "SERVICE3",
@@ -62,8 +60,7 @@ const services = [
             "This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.",
             "This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.",
             "This is xyz bla bla bla stuff being spoken about."
-        ],
-        read: "#"
+        ]
     }
 ]
 
@@ -86,7 +83,6 @@ leftTabs.forEach(tab=>{
         let imageUrl = service.image.url
         let imageAlt = service.image.alt
         let par = service.paragraph
-        let readLink = service.read
 
         let paragraph = ''
         par.forEach(p=>{
@@ -98,25 +94,35 @@ leftTabs.forEach(tab=>{
             <img class="image" src="${imageUrl}" alt="${imageAlt}">
         </div>
         ${paragraph}
-        <div class="btn read-btn">Explore</div>
+        <div class="btn" id="read-btn">Explore</div>
         `
+        openExplore()
     })
 })
 
-
-const exploreBtn = document.querySelector(".read-btn")
-const exploreSection = document.querySelector(".explore")
-exploreBtn.addEventListener("click",()=>{
-    console.log(exploreBtn)
-    exploreSection.innerHTML = `
-    <div class="explore-header">
-        <h2>HEADING</h2>
-        <p id="close-explore">×</p>
-    </div>
-    `
-    exploreSection.style.display = "flex"
-    const closeExplore = document.getElementById("close-explore")
-    closeExplore.addEventListener("click",()=>{
-        exploreSection.style.display = "none"
+function openExplore(){
+    const exploreBtn = document.getElementById("read-btn")
+    const exploreSection = document.querySelector(".explore")
+    exploreBtn.addEventListener("click", () => {
+        console.log(exploreBtn)
+        exploreSection.innerHTML = `
+        <div class="explore-header">
+            <h1>HEADING</h1>
+            <p id="close-explore">×</p>
+        </div>
+        <div class="explore-body">
+            <img class="image explore-image" src="images/screenshot.png" alt="explore-image"></img>
+            <p class="explore-paragraph">
+                stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
+            </p>
+        </div>
+        `
+        exploreSection.style.display = "flex"
+        const closeExplore = document.getElementById("close-explore")
+        closeExplore.addEventListener("click", () => {
+            exploreSection.style.display = "none"
+        })
     })
-})
+}
+
+openExplore()
