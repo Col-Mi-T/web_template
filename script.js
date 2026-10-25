@@ -112,9 +112,35 @@ function openExplore(){
         </div>
         <div class="explore-body">
             <img class="image explore-image" src="images/screenshot.png" alt="explore-image"></img>
+            <h2 class="explore-subheading">Section 1</h2>
             <p class="explore-paragraph">
                 stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
+                stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
+                stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
+                stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
+                stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
             </p>
+            <img class="image section-image" src="images/screenshot.png" alt="section-image"></img>
+
+            <h2 class="explore-subheading">Section 2</h2>
+            <p class="explore-paragraph">
+                stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
+                stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
+                stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
+                stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
+                stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
+            </p>
+            <img class="image section-image" src="images/screenshot.png" alt="section-image"></img>
+
+            <h2 class="explore-subheading">Section 3</h2>
+            <p class="explore-paragraph">
+                stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
+                stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
+                stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
+                stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
+                stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
+            </p>
+            <img class="image section-image" src="images/screenshot.png" alt="section-image"></img>
         </div>
         `
         exploreSection.style.display = "flex"
