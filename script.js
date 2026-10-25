@@ -36,7 +36,39 @@ const services = [
             "This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.",
             "This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.",
             "This is xyz bla bla bla stuff being spoken about."
-        ]
+        ],
+        explore:{
+            sections:[
+                {
+                    title:"Section 1",
+                    paragraph:[
+                        "stuff stuff stuff stuff stuff stuffstuff stuff stuffstuff stuff stuffstuff stuff stuff",
+                        "stuff stuff stuff stuff stuff stuffstuff stuff stuffstuff stuff stuffstuff stuff stuff",
+                        "stuff stuff stuff stuff stuff stuffstuff stuff stuffstuff stuff stuffstuff stuff stuff",
+                    ],
+                    image:{
+                        url:"images/screenshot.png",
+                        alt:"section image"
+                    }
+                },
+                {
+                    title: "Section 2",
+                    paragraph: "stuff stuff stuff stuff stuff stuffstuff stuff stuffstuff stuff stuffstuff stuff stuff stuff stuff stuff stuff stuff stuffstuff stuff stuffstuff stuff stuffstuff stuff stuff stuff stuff stuff stuff stuff stuffstuff stuff stuffstuff stuff stuffstuff stuff stuff",
+                    image: {
+                        url: "images/screenshot.png",
+                        alt: "section image"
+                    }
+                },
+                {
+                    title: "Section 3",
+                    paragraph: "stuff stuff stuff stuff stuff stuffstuff stuff stuffstuff stuff stuffstuff stuff stuff stuff stuff stuff stuff stuff stuffstuff stuff stuffstuff stuff stuffstuff stuff stuff stuff stuff stuff stuff stuff stuffstuff stuff stuffstuff stuff stuffstuff stuff stuff",
+                    image: {
+                        url: "images/screenshot.png",
+                        alt: "section image"
+                    }
+                }
+            ]
+        }
     },
     {
         title: "SERVICE2",
@@ -48,7 +80,39 @@ const services = [
             "This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.",
             "This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.",
             "This is xyz bla bla bla stuff being spoken about."
-        ]
+        ],
+        explore: {
+            sections: [
+                {
+                    title: "Section 1",
+                    paragraph: [
+                        "stuff stuff stuff stuff stuff stuffstuff stuff stuffstuff stuff stuffstuff stuff stuff",
+                        "stuff stuff stuff stuff stuff stuffstuff stuff stuffstuff stuff stuffstuff stuff stuff",
+                        "stuff stuff stuff stuff stuff stuffstuff stuff stuffstuff stuff stuffstuff stuff stuff",
+                    ],
+                    image: {
+                        url: "images/screenshot.png",
+                        alt: "section image"
+                    }
+                },
+                {
+                    title: "Section 2",
+                    paragraph: "stuff stuff stuff stuff stuff stuffstuff stuff stuffstuff stuff stuffstuff stuff stuff stuff stuff stuff stuff stuff stuffstuff stuff stuffstuff stuff stuffstuff stuff stuff stuff stuff stuff stuff stuff stuffstuff stuff stuffstuff stuff stuffstuff stuff stuff",
+                    image: {
+                        url: "images/screenshot.png",
+                        alt: "section image"
+                    }
+                },
+                {
+                    title: "Section 3",
+                    paragraph: "stuff stuff stuff stuff stuff stuffstuff stuff stuffstuff stuff stuffstuff stuff stuff stuff stuff stuff stuff stuff stuffstuff stuff stuffstuff stuff stuffstuff stuff stuff stuff stuff stuff stuff stuff stuffstuff stuff stuffstuff stuff stuffstuff stuff stuff",
+                    image: {
+                        url: "images/screenshot.png",
+                        alt: "section image"
+                    }
+                }
+            ]
+        }
     },
     {
         title: "SERVICE3",
@@ -60,7 +124,39 @@ const services = [
             "This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.",
             "This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.This is xyz bla bla bla stuff being spoken about.",
             "This is xyz bla bla bla stuff being spoken about."
-        ]
+        ],
+        explore: {
+            sections: [
+                {
+                    title: "Section 1",
+                    paragraph: [
+                        "stuff stuff stuff stuff stuff stuffstuff stuff stuffstuff stuff stuffstuff stuff stuff",
+                        "stuff stuff stuff stuff stuff stuffstuff stuff stuffstuff stuff stuffstuff stuff stuff",
+                        "stuff stuff stuff stuff stuff stuffstuff stuff stuffstuff stuff stuffstuff stuff stuff",
+                    ],
+                    image: {
+                        url: "images/screenshot.png",
+                        alt: "section image"
+                    }
+                },
+                {
+                    title: "Section 2",
+                    paragraph: "stuff stuff stuff stuff stuff stuffstuff stuff stuffstuff stuff stuffstuff stuff stuff stuff stuff stuff stuff stuff stuffstuff stuff stuffstuff stuff stuffstuff stuff stuff stuff stuff stuff stuff stuff stuffstuff stuff stuffstuff stuff stuffstuff stuff stuff",
+                    image: {
+                        url: "images/screenshot.png",
+                        alt: "section image"
+                    }
+                },
+                {
+                    title: "Section 3",
+                    paragraph: "stuff stuff stuff stuff stuff stuffstuff stuff stuffstuff stuff stuffstuff stuff stuff stuff stuff stuff stuff stuff stuffstuff stuff stuffstuff stuff stuffstuff stuff stuff stuff stuff stuff stuff stuff stuffstuff stuff stuffstuff stuff stuffstuff stuff stuff",
+                    image: {
+                        url: "images/screenshot.png",
+                        alt: "section image"
+                    }
+                }
+            ]
+        }
     }
 ]
 
@@ -68,6 +164,25 @@ const leftTabs = document.querySelectorAll(".list-item-tab")
 console.log(leftTabs)
 let tabId = ""
 const listItem = document.querySelector(".list-item")
+let service = services[0]
+
+let title = service.title
+let imageUrl = service.image.url
+let imageAlt = service.image.alt
+let par = service.paragraph
+
+let paragraph = ''
+par.forEach(p => {
+    paragraph += `<div class="list-item-par">${p}</div>`
+})
+listItem.innerHTML = `
+        <div class="list-item-title"><h2>${title}</h2></div>
+        <div id="service-image">
+            <img class="image" src="${imageUrl}" alt="${imageAlt}">
+        </div>
+        ${paragraph}
+        <div class="btn" id="read-btn">Explore</div>
+        `
 
 leftTabs.forEach(tab=>{
     console.log(tab)
@@ -96,52 +211,36 @@ leftTabs.forEach(tab=>{
         ${paragraph}
         <div class="btn" id="read-btn">Explore</div>
         `
-        openExplore()
+        openExplore(service)
     })
 })
 
-function openExplore(){
+function openExplore(service){
+    console.log(service)
     const exploreBtn = document.getElementById("read-btn")
     const exploreSection = document.querySelector(".explore")
     exploreBtn.addEventListener("click", () => {
         console.log(exploreBtn)
+
+        let section = ""
+
+        service.explore.sections.forEach(s=>{
+            section +=`<h2 class="explore-subheading">${s.title}</h2>
+            <p class="explore-paragraph">${s.paragraph}</p>
+            <img class="image section-image" src="${s.image.url}" alt="${s.image.alt}">
+`
+        })
         exploreSection.innerHTML = `
         <div class="explore-header">
-            <h1>HEADING</h1>
+            <h1>${service.title}</h1>
             <p id="close-explore">×</p>
         </div>
         <div class="explore-body">
-            <img class="image explore-image" src="images/screenshot.png" alt="explore-image"></img>
-            <h2 class="explore-subheading">Section 1</h2>
-            <p class="explore-paragraph">
-                stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
-                stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
-                stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
-                stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
-                stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
-            </p>
-            <img class="image section-image" src="images/screenshot.png" alt="section-image"></img>
-
-            <h2 class="explore-subheading">Section 2</h2>
-            <p class="explore-paragraph">
-                stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
-                stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
-                stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
-                stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
-                stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
-            </p>
-            <img class="image section-image" src="images/screenshot.png" alt="section-image"></img>
-
-            <h2 class="explore-subheading">Section 3</h2>
-            <p class="explore-paragraph">
-                stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
-                stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
-                stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
-                stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
-                stufff stuff stuff stuff stuff stuff stuff stuff stuff stuff
-            </p>
-            <img class="image section-image" src="images/screenshot.png" alt="section-image"></img>
+            <img class="image explore-image" src="${service.image.url}" alt="${service.image.alt}"></img>
+            
+            ${section}
         </div>
+        <div class="explore-footer">Thank you for exploring!</div>
         `
         exploreSection.style.display = "flex"
         const closeExplore = document.getElementById("close-explore")
@@ -151,4 +250,4 @@ function openExplore(){
     })
 }
 
-openExplore()
+openExplore(service)

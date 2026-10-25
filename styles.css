@@ -30,7 +30,6 @@
 
 ::-webkit-scrollbar {
     width: 6px;
-    height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -386,7 +385,9 @@ textarea {
 
 .explore-body {
     overflow: auto;
-    padding-top: 20px;
+    padding: 20px;
+    padding-left:50px;
+    padding-right:50px;
 
     display: flex;
     flex-direction: column;
@@ -403,6 +404,10 @@ textarea {
 
 .explore-paragraph {
     text-align: left;
+}
+
+.explore-footer{
+    text-align:center
 }
 
 .section-image {
