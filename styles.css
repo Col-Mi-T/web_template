@@ -334,7 +334,6 @@ textarea {
     width: 100%;
     border-radius: 4rem;
 }
-
 .explore {
     position: fixed;
     z-index: 9999;
@@ -357,7 +356,7 @@ textarea {
 .explore-header {
     display: flex;
     padding: 0px 10px;
-    padding-bottom:20px;
+    padding-bottom: 20px;
     align-items: center;
     position: relative;
 }
@@ -367,48 +366,50 @@ textarea {
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    padding-top:50px;
-    width:50%;
+    padding-top: 50px;
+    width: 50%;
     border-bottom: 2px solid var(--bg-primary);
 }
 
 #close-explore {
     margin-left: auto;
-    cursor:pointer;
-    padding:0px 15px;
-    border-radius:20px;
-    font-size:30px;
+    cursor: pointer;
+    padding: 0px 15px;
+    border-radius: 20px;
+    font-size: 30px;
     border: 2px solid var(--bg-primary)
 }
 
-.explore-header p:hover{
-    color:red
+.explore-header p:hover {
+    color: red
 }
 
-.explore-body{
-    overflow:auto;
-    padding-top:20px;
-    
+.explore-body {
+    overflow: auto;
+    padding-top: 20px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.explore-image{
-    width:80%
+.explore-image {
+    width: 80%
 }
 
-.explore-subheading{
-    text-align:left;
+.explore-subheading {
+    text-align: left;
 }
-.explore-paragraph{
-    text-align:left;
+
+.explore-paragraph {
+    text-align: left;
 }
-.section-image{
-    position:relative;
-    width:60%;
-    padding:30px;
-    margin-left:auto;
+
+.section-image {
+    position: relative;
+    width: 60%;
+    padding: 30px;
+    margin-left: auto;
 }
     
 #read-btn {
@@ -508,6 +509,22 @@ textarea {
 }
 
 @media (min-width:768px) {
+
+    .explore {
+        width: 75%;
+    }
+        
+    .explore-image{
+        width:50%
+    }
+    
+    .section-image{
+        position:relative;
+        width:30%;
+        padding:30px;
+        margin-left:auto;
+    }
+
     #footer {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
